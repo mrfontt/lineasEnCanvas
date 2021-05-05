@@ -1,0 +1,11 @@
+var d = document.getElementById("dibujito");
+var lienzo = d.getContext("2d");
+//console.log(lienzo);  Esto sirve para verificar que se puede dibujar en 2d
+
+lienzo.beginPath();         //Así es como JS le llama a iniciar un trazo
+lienzo.strokeStyle = "red"; //Este atributo/propiedad es para definir el color de la línea
+lienzo.moveTo(100, 100);    //Método para mover el lapiz a donde va a arrancar la línea
+lienzo.lineTo(200, 200);    //Es la función de trazar una línea
+lienzo.stroke();            //Esta función dibuja la línea
+lienzo.closePath();         /*Función para cerrar el trazo ("levantar el lapiz"),
+                              si no se invoca la línea sigue por ese camino*/

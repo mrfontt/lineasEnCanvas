@@ -1,0 +1,107 @@
+HTML
+
+<meta charset="utf-8" />
+Permite agregar simbolos nuevos como tildes, la ñ, entre otros.
+
+<tittle> </tittle>
+El texto que se escriba entre ella será el título que aparezca en la pestaña
+
+<h1> </h1>
+El texto que se escriba entre ella será el título que aparezca en la página
+
+<p> </p>
+El texto que se escriba entre ella será un párrafo en la página.
+
+<br>
+Es un salto de línea.
+
+<input />
+Dentro de ella se pueden colocar diferentes elementos de formulario,
+como los siguientes:
+
+	type="text" id="texto_ejemplo"
+	Este código invoca una caja de texto y se genera un id que
+	permite enlazarlo a JS.
+
+	type="button" value="Texto_del_boton" id="boton_ejemplo"
+	Este código invoca un botón, al cual luego se le ingresa el texto
+	que aparecerá en pantalla dentro del mismo y se le genera
+	una id que permite enlazarlo a JS.
+
+<canvas ></canvas>
+Es el lugar abieto que permite dibujar en JS, en donde se ponen los 
+siguientes parámetros en el espacio:
+
+	width="300" height="300" id="dibujo_ejemplo"
+	En este caso significa que el marco de referencia para dibujar es de
+	300 de ancho por 300 de alto, con un id que le permite enlazar a JS.
+
+<script src="dibujo.js"></script>
+Permite cargar scripts externos. Esto significa trabajar en otra pestaña
+con extensión .js lo cual es una buena práctica de programación, se ve
+mucho más ordenado y por ende es más fácil de escribir y leer.
+
+----------------------------------------------------------------------------
+
+JavaScript
+
+var texto = document.getElementById("texto_lineas");
+var boton = document.getElementById("botoncito");
+var d = document.getElementById("dibujito");
+
+Se obtiene una variable de HTML que se traspasa a JS dentro de una variable
+nueva, la cual es un objeto que se puede guardar sólo en esa etiqueta.
+En el primer caso es la caja de texto, en el segundo el botón y en el
+tercero permite definir la variable para más adelante definir el contexto
+de dibujo.
+
+boton.addEventListener("click", dibujoPorClick);
+En este caso el objeto 'boton' posee un evento el cual es hacer "click",
+el cual dispara una función (que se puede declarar donde queramos).
+Todo esto gracias a un 'escuchador de eventos' el cual es .addEventListener
+
+var lienzo = d.getContext("2d");
+En este código se obtuvo un contexto 2d definido en el 'lienzo'
+(el cual se puede denominar de cualquier manera) lo que permite dibujar
+en JS. Todo esto se enlanzó anteriormente.
+
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal){ }
+Ejemplo de función que recibe parámetros, los cuales uno mismo define
+dentro del paréntesis (). Luego dentro del paréntesis de llaves {}
+creamos y complejizamos la función como tal.
+
+function dibujoPorClick(){ }
+Ejemplo de función que no recibe parámetros y se dispara en casos especiales
+con lo que lleva dentro del paréntesis de llaves {}.
+
+var lineas = parseInt(texto.value);
+Permite obtener el valor de una formulario, en este caso de la caja de texto
+que definimos antes, estrictamente lo hace la función .value
+parteInt() lo convierte de string a int 
+y todo esto se guarda dentro de una etiqueta nueva.
+
+for(l = 0; l <lineas; l++){ }
+Este ciclo posee 3 parámetros separados por punto y coma ;
+el primero es la variable iteradora que arranca el ciclo
+el segundo la condición sobre la cual el ciclo se ejecuta
+el tercero es una instrucción que ocurre cada vez que el ciclo es completado
+
+console.log("texto_ejemplo" + parámetro)
+Sirve para mandar mensajes de depuración a la consola del navegador
+sin que los usuarios lo vean, con el objetivo de que sólo nosotros veamos
+el programa por dentro. No afecta la forma en que funciona el programa.
+En este caso se aplico un texto de ejemplo concatenado con un parámetro
+con el mismo nombre.
+
+function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal)
+{
+  lienzo.beginPath();                 //Así es como JS le llama a iniciar un trazo
+  lienzo.strokeStyle = color;         //Este atributo/propiedad es para definir el color de la línea
+  lienzo.moveTo(xinicial, yinicial);  //Método para mover el lapiz a donde va a arrancar la línea
+  lienzo.lineTo(xfinal, yfinal);      //Es la función de trazar una línea
+  lienzo.stroke();                    //Esta función dibuja la línea
+  lienzo.closePath();                 /*Función para cerrar el trazo ("levantar el lapiz"),
+                                        si no se invoca la línea sigue por ese camino*/
+}
+Función para dibujar en 2d en JS.
+

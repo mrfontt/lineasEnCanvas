@@ -1,0 +1,42 @@
+Método = Función que hace parte de un objeto
+
+Propiedad = Cuando la variable es parte de un objeto
+(o atributo)
+
+<meta charset="utf-8" /> 
+Esta etiqueta permite poner caracteres que no están por defecto,
+como tildes y la ñ. Va luego de head
+
+-----------------------------------------------------------------
+
+Veamos cómo utilizar el DOM
+
+Los objetos contienen
+
+Métodos: funciones dentro de un objeto
+Atributo o propiedad: variables internas que almacenan valores
+ 
+
+Recuerda:
+
+Las únicas etiquetas que deben ir a la misma altura de la etiqueta html es head y body
+window.location  devuelve la ruta de la página
+
+Para agregar soporte a tildes y letras especiales puedes usar dentro de head
+
+Cuándo quieres depurar un programa puedes usar console.log para ver mensajes en la consola
+
+-----------------------------------------------------------------------------------------
+
+Cuando se ponen paréntesis luego de una función, este se dispara en la misma línea.(1)
+En cambio, si no se ponen el evento puede ocurrir siempre que se acuda a él.(2)
+
+funcion()	//(1)
+funcion		//(2)
+
+
+botonx.addEventListener("primer evento al cual reacciona", funcion que dispara en reaccion);
+
+Es un elemento interacto en html parte de js al igual que:
+
+document.getElementById("");

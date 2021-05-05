@@ -1,0 +1,14 @@
+console.log(lienzo); //Sirve para 
+
+Para que las funciones sean invocadas requieren paréntesis de apertura
+y de cierre
+
+-----------------------------------------------------------------------
+
+getContext: es un método del objeto Canvas que obtiene el área dónde se va a dibujar.
+beginPath: un método que inicia un trazo.
+strokeStyle: variable para guardar el color de la línea.
+moveTo: método para mover el lápiz desde dónde va a dibujar la línea en las coordenadas especificadas.
+lineTo: traza una línea hasta las coordenadas especificadas.
+stroke: función que dibuja la línea con un estilo especificado.
+closePath: cierra el camino del trazo, es como levantar el lápiz.
